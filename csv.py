@@ -21,4 +21,11 @@ def lambda_handler(event, context):
         print(e)
         print('Error getting object {} from bucket {}. Make sure they exist and your bucket is in the same region as this function.'.format(key, bucket))
         raise e
-
+    try:
+        data = response['Body'].read()
+        contents = data.decode('utf-8')
+        print("contents: " + contents)
+    except Exception as e:
+        print(e)
+        print('error on printing')
+        raise e

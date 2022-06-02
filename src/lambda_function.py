@@ -1,5 +1,5 @@
 import s3.client
-import s3.csv
+import s3.csv_handler
 
 print('Loading function')
 
